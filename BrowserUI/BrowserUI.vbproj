@@ -95,6 +95,7 @@
     <Content Include="code.html" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom_styles.css" />
+    <Content Include="Icons\favicon.ico" />
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom_scripts.js" />
@@ -151,7 +152,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Icons\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
