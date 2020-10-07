@@ -30,7 +30,7 @@ button.addEventListener("click", function () {
             firstIndex++;
             lastIndex--;
         }
-        return "This is word is a Palindrome!";
+        return "This word is a Palindrome!";
     };
 
     const inputToInner = (inString, outString) => {
