@@ -1,9 +1,7 @@
 // ids = reverseButton \ inputString \ outputString
 
-// assign our button to a const
 const button = document.getElementById("reverseButton");
 
-// throw an addEventListener on button
 button.addEventListener("click", function () {
     /***** VARIABLE DECLARATIONS *****/
     const inputString = document.getElementById("inputString");
