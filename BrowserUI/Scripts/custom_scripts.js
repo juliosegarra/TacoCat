@@ -23,14 +23,18 @@ button.addEventListener("click", function () {
     const isPalindrome = (str) => {
         let firstIndex = 0;
         let lastIndex = str.length - 1;
-        while (firstIndex < lastIndex) {
-            if (str.charAt(firstIndex) != str.charAt(lastIndex)) {
-                return "This word is NOT a Palindrome.";
+        if (str === "") {
+            return "";
+        } else {
+            while (firstIndex < lastIndex) {
+                if (str.charAt(firstIndex) != str.charAt(lastIndex)) {
+                    return "This word is NOT a Palindrome.";
+                }
+                firstIndex++;
+                lastIndex--;
             }
-            firstIndex++;
-            lastIndex--;
+            return "This word is a Palindrome!";
         }
-        return "This word is a Palindrome!";
     };
 
     const inputToInner = (inString, outString) => {
