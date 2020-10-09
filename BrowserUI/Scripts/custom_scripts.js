@@ -1,3 +1,10 @@
+// no number validation
+document.getElementById("inputString").addEventListener("input", (e) => {
+    let input = document.getElementById("inputString");
+    value = input.value;
+    input.value = value.replace(/[0-9]/gi, "");
+});
+
 /***** Global Variables *****/
 
 const button = document.getElementById("reverseButton");
