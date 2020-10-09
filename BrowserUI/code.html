@@ -65,6 +65,13 @@
 
 <pre class="line-numbers">
     <code class="language-js"> 
+        // validate input against numbers
+        document.getElementById("inputString").addEventListener("input", (e) => {
+            let input = document.getElementById("inputString");
+            value = input.value;
+            input.value = value.replace(/[0-9]/gi, "");
+        });
+
         const button = document.getElementById("reverseButton");
         
         button.addEventListener("click", function () {
