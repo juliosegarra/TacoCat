@@ -95,12 +95,14 @@
     <Content Include="code.html" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom_styles.css" />
+    <Content Include="Content\prism-synthwave84.css" />
     <Content Include="Icons\favicon.ico" />
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom_scripts.js" />
     <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\prism.js" />
     <Content Include="solve.html" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -5,8 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Taco Cat: String Reverser and Palindrome Checker">
+    <meta name="author" content="Julio Segarra">
 
     <title>Taco Cat</title>
 
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="Content/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="icon" type="image/x-icon" href="Icons/favicon.ico" />
+    <link href="Content/prism-synthwave84.css" rel="stylesheet" />
     <link rel="stylesheet" href="Content/custom_styles.css">
 </head>
 
@@ -57,20 +58,67 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">This Page shows your JS code</h1>
-                <p class="lead">You need to use a Syntax Highlighter - Prism.js is default</p>
-                <ul class="list-unstyled">
-                    <li>Code with highlighter</li>
-                    <li>Will display on this page</li>
-                </ul>
+                <h1 class="mt-5">Taco Cat JavaScript</h1>
             </div>
         </div>
     </div>
+
+<pre class="line-numbers">
+    <code class="language-js"> 
+        const button = document.getElementById("reverseButton");
+        
+        button.addEventListener("click", function () {
+            /***** button click Scoped VARIABLE DECLARATIONS *****/
+            const inputString = document.getElementById("inputString").value;
+            const outputString = document.getElementById("outputString");
+            let lowerInput = inputString;
+            lowerInput = lowerInput.toLowerCase();
+            
+            // REGEX TO CLEAN INPUT DATA
+            lowerInput = lowerInput.replace(/[^a-z]/gi, "");
+            
+            /***** FUNCTION DECLARATIONS *****/
+            const reverseString = (str) => {
+                let reversedWord = "";
+                for (let i = str.length - 1; i >= 0; i--) {
+                    reversedWord += str.charAt(i);
+                }
+                return reversedWord;
+            };
+            
+            const isPalindrome = (str) => {
+                let firstIndex = 0;
+                let lastIndex = str.length - 1;
+                if (str === "") {
+                return "";
+                } else {
+                    while (firstIndex < lastIndex) { 
+                        if (str.charAt(firstIndex) != str.charAt(lastIndex)) { 
+                            return "This word is NOT a Palindrome." ; 
+                        } 
+                        firstIndex++; 
+                        lastIndex--; 
+                    } 
+                return "This word is a Palindrome!"; 
+                } 
+            }; 
+            
+            const inputToInner = (inString, cleanedString, outString) => {
+                    outString.innerHTML = `${inString}\n\n${isPalindrome(cleanedString)}`;
+            };
+            
+            /***** CODE EXECUTION *****/
+            lowerInput = reverseString(lowerInput);
+            inputToInner(inputString, lowerInput, outputString);
+        });
+    </code>
+</pre>
 
     <!-- Bootstrap core JavaScript -->
     <script src="Scripts/jquery-3.5.1.slim.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/prism.js"></script>
     <script src="Scripts/custom_scripts.js"></script>
 </body>
 

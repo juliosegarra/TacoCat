@@ -1,13 +1,14 @@
-// ids = reverseButton \ inputString \ outputString
+/***** Global Variables *****/
 
 const button = document.getElementById("reverseButton");
 
 button.addEventListener("click", function () {
-    /***** VARIABLE DECLARATIONS *****/
-    const inputString = document.getElementById("inputString");
+    /***** Button Event Listener VARIABLE DECLARATIONS *****/
+    const inputString = document.getElementById("inputString").value;
     const outputString = document.getElementById("outputString");
-    let lowerInput = inputString.value;
+    let lowerInput = inputString;
     lowerInput = lowerInput.toLowerCase();
+
     // REGEX TO CLEAN INPUT DATA
     lowerInput = lowerInput.replace(/[^a-z]/gi, "");
 
@@ -37,11 +38,11 @@ button.addEventListener("click", function () {
         }
     };
 
-    const inputToInner = (inString, outString) => {
-        outString.innerHTML = `${inString}\n\n${isPalindrome(inString)}`;
+    const inputToInner = (inString, cleanedString, outString) => {
+        outString.innerHTML = `${inString}\n\n${isPalindrome(cleanedString)}`;
     };
 
     /***** CODE EXECUTION *****/
     lowerInput = reverseString(lowerInput);
-    inputToInner(lowerInput, outputString);
+    inputToInner(inputString, lowerInput, outputString);
 });
