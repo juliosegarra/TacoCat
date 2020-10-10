@@ -97,6 +97,7 @@
     <Content Include="Content\custom_styles.css" />
     <Content Include="Content\prism-synthwave84.css" />
     <Content Include="Icons\favicon.ico" />
+    <Content Include="Images\310_tacocat.png" />
     <Content Include="Images\tacocat.png" />
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.min.js" />
