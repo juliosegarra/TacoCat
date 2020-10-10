@@ -36,12 +36,12 @@ button.addEventListener("click", function () {
         } else {
             while (firstIndex < lastIndex) {
                 if (str.charAt(firstIndex) != str.charAt(lastIndex)) {
-                    return "This word is NOT a Palindrome.";
+                    return "This is NOT a Palindrome.";
                 }
                 firstIndex++;
                 lastIndex--;
             }
-            return "This word is a Palindrome!";
+            return "This is a Palindrome!";
         }
     };
 
