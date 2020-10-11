@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="Content/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="icon" type="image/x-icon" href="Icons/favicon.ico" />
+    <link href="Content/prism.css" rel="stylesheet" />
     <link href="Content/prism-synthwave84.css" rel="stylesheet" />
     <link rel="stylesheet" href="Content/custom_styles.css">
 </head>
@@ -61,66 +62,70 @@
                 <h1 class="mt-5">Taco Cat JavaScript</h1>
             </div>
         </div>
+        <div class="row text-center">
+            <div class="col"></div>
+            <div class="col-9">
+                <pre class="line-numbers">
+                    <code class="language-js"> 
+                        // validate input against numbers
+                        document.getElementById("inputString").addEventListener("input", (e) => {
+                            let input = document.getElementById("inputString");
+                            value = input.value;
+                            input.value = value.replace(/[0-9]/gi, "");
+                        });
+                
+                        const button = document.getElementById("reverseButton");
+                        
+                        button.addEventListener("click", function () {
+                            /***** button click Scoped VARIABLE DECLARATIONS *****/
+                            const inputString = document.getElementById("inputString").value;
+                            const outputString = document.getElementById("outputString");
+                            let lowerInput = inputString;
+                            lowerInput = lowerInput.toLowerCase();
+                            
+                            // REGEX TO CLEAN INPUT DATA
+                            lowerInput = lowerInput.replace(/[^a-z]/gi, "");
+                            
+                            /***** FUNCTION DECLARATIONS *****/
+                            const reverseString = (str) => {
+                                let reversedWord = "";
+                                for (let i = str.length - 1; i >= 0; i--) {
+                                    reversedWord += str.charAt(i);
+                                }
+                                return reversedWord;
+                            };
+                            
+                            const isPalindrome = (str) => {
+                                let firstIndex = 0;
+                                let lastIndex = str.length - 1;
+                                if (str === "") {
+                                return "";
+                                } else {
+                                    while (firstIndex < lastIndex) { 
+                                        if (str.charAt(firstIndex) != str.charAt(lastIndex)) { 
+                                            return "This is NOT a Palindrome." ; 
+                                        } 
+                                        firstIndex++; 
+                                        lastIndex--; 
+                                    } 
+                                return "This is a Palindrome!"; 
+                                } 
+                            }; 
+                            
+                            const inputToInner = (inString, cleanedString, outString) => {
+                                    outString.innerHTML = `${inString}\n\n${isPalindrome(cleanedString)}`;
+                            };
+                            
+                            /***** CODE EXECUTION *****/
+                            lowerInput = reverseString(lowerInput);
+                            inputToInner(inputString, lowerInput, outputString);
+                        });
+                    </code>
+                </pre>
+            </div>
+            <div class="col"></div>
+        </div>
     </div>
-
-<pre class="line-numbers">
-    <code class="language-js"> 
-        // validate input against numbers
-        document.getElementById("inputString").addEventListener("input", (e) => {
-            let input = document.getElementById("inputString");
-            value = input.value;
-            input.value = value.replace(/[0-9]/gi, "");
-        });
-
-        const button = document.getElementById("reverseButton");
-        
-        button.addEventListener("click", function () {
-            /***** button click Scoped VARIABLE DECLARATIONS *****/
-            const inputString = document.getElementById("inputString").value;
-            const outputString = document.getElementById("outputString");
-            let lowerInput = inputString;
-            lowerInput = lowerInput.toLowerCase();
-            
-            // REGEX TO CLEAN INPUT DATA
-            lowerInput = lowerInput.replace(/[^a-z]/gi, "");
-            
-            /***** FUNCTION DECLARATIONS *****/
-            const reverseString = (str) => {
-                let reversedWord = "";
-                for (let i = str.length - 1; i >= 0; i--) {
-                    reversedWord += str.charAt(i);
-                }
-                return reversedWord;
-            };
-            
-            const isPalindrome = (str) => {
-                let firstIndex = 0;
-                let lastIndex = str.length - 1;
-                if (str === "") {
-                return "";
-                } else {
-                    while (firstIndex < lastIndex) { 
-                        if (str.charAt(firstIndex) != str.charAt(lastIndex)) { 
-                            return "This word is NOT a Palindrome." ; 
-                        } 
-                        firstIndex++; 
-                        lastIndex--; 
-                    } 
-                return "This word is a Palindrome!"; 
-                } 
-            }; 
-            
-            const inputToInner = (inString, cleanedString, outString) => {
-                    outString.innerHTML = `${inString}\n\n${isPalindrome(cleanedString)}`;
-            };
-            
-            /***** CODE EXECUTION *****/
-            lowerInput = reverseString(lowerInput);
-            inputToInner(inputString, lowerInput, outputString);
-        });
-    </code>
-</pre>
-
     <!-- Bootstrap core JavaScript -->
     <script src="Scripts/jquery-3.5.1.slim.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
