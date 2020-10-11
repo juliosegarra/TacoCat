@@ -59,14 +59,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Taco Cat JavaScript</h1>
+                <h1 class="mt-5">Taco Cat Code</h1>
+                <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-javascript-tab" data-toggle="pill" href="#pills-javascript" role="tab" aria-controls="pills-javascript" aria-selected="true">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-html-tab" data-toggle="pill" href="#pills-html" role="tab" aria-controls="pills-html" aria-selected="false">HTML</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="row text-center">
+        <div class="row text-center tab-content line-numbers" id="pills-tabContent">
             <div class="col"></div>
-            <div class="col-9">
-                <pre class="line-numbers">
-                    <code class="language-js"> 
+            <div class="col-9 tab-pane fade show active" id="pills-javascript" role="tabpanel" aria-labelledby="pills-javascript-tab">
+                <pre class=" language-javascript">
+                    <code class="language-javascript"> 
                         // validate input against numbers
                         document.getElementById("inputString").addEventListener("input", (e) => {
                             let input = document.getElementById("inputString");
@@ -121,6 +129,47 @@
                             lowerInput = reverseString(lowerInput);
                             inputToInner(inputString, lowerInput, outputString);
                         });
+                    </code>
+                </pre>
+            </div>
+            <div class="col-9 tab-pane fade" id="pills-html" role="tabpanel" aria-labelledby="pills-html-tab">
+                <pre class="line-numbers language-markup">
+                    <code class="language-markup"> 
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg-12 justify-content-center align-items-center"&gt;
+            &lt;h1 class="mt-5"&gt;Reverse a String&lt;/h1&gt;
+            &lt;p class="lead"&gt;Enter a word or phrase to be reversed and check if it's a palindrome.&lt;/p&gt;
+
+            &lt;!--ids = inputString // outputString  --&gt;
+            &lt;form&gt;
+                &lt;!-- FORM-GROUP-1-INPUT --&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;div class="form-row"&gt;
+                        &lt;label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"&gt;Enter Word: &lt;/label&gt;
+                        &lt;div class="col-sm-10"&gt;
+                            &lt;input id="inputString" type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Type here..." autocomplete="off"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- FORM-GROUP-2-OUTPUT --&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;div class="form-row"&gt;
+                        &lt;label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"&gt;Results:&lt;/label&gt;
+                        &lt;div class="col-sm-10"&gt;
+                            &lt;textarea id="outputString" class="form-control" rows="4" readonly&gt;
+                            &lt;/textarea&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- id="reverseButton" --&gt;
+        &lt;button id="reverseButton" class="btn-secondary btn-sm"&gt;Reverse String&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
                     </code>
                 </pre>
             </div>
