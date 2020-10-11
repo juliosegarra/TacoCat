@@ -1,14 +1,14 @@
 body {
-    background-color: linen;
+  background-color: linen;
 }
 
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 @media only screen and (max-width: 1370px) {
   /* For mobile phones: */
-  .col-9 {
+  .col-10 {
     min-width: 100% !important;
   }
 }
