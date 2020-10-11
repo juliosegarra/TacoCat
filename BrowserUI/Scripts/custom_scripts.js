@@ -45,11 +45,11 @@ button.addEventListener("click", function () {
         }
     };
 
-    const inputToInner = (inString, cleanedString, outString) => {
-        outString.innerHTML = `${inString}\n\n${isPalindrome(cleanedString)}`;
+    const inputToInner = (cleanedString, outString) => {
+        outString.innerHTML = `${cleanedString}\n\n${isPalindrome(cleanedString)}`;
     };
 
     /***** CODE EXECUTION *****/
     lowerInput = reverseString(lowerInput);
-    inputToInner(inputString, lowerInput, outputString);
+    inputToInner(lowerInput, outputString);
 });
